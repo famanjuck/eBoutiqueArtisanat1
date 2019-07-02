@@ -1,0 +1,19 @@
+
+<div class="container spacer" >
+        <div class="card">
+            <div class="card-header bg-primary" >Liste Commande</div>
+            <div class="card-body">
+          <div class="table-responsive">  
+          <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+        <table class= "table tables-striped">
+            <tr>
+             <th>IDCommande</th>
+            </tr> 
+            <tr *ngFor="let c of ListeCommandes">
+              <td>{{c.numcommande}}</td> 
+            </tr>
+        </table>
+      </div>
+      </div>
+      </div>
+      </div>

@@ -1,0 +1,68 @@
+<div class="container" spacer>
+  <div class="panel panel-primary">
+  <div class="panel-heading">Nouveau Articles</div>
+  <div class="panel-body">
+
+      <div class="login-grids"> 
+            
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+    <label class="mat-label">ID</label>
+  <input class="form-control" type="text" [(ngModel)] ="article.idArticle"/>
+</div>
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+  <label class="control-label">SectionArt:</label> 
+  <select  class="form-control" [(ngModel)]="section">
+   <option  *ngFor="let s of Listesections" value="{{s.idsection}}"  ng-repeat="whitelabel in whitelabels track by whitelabel.WhiteLabel.id">
+     {{s.nomsection}}  
+   </option>
+   </select>
+</div> 
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+    <label class="control-label">Artisan:</label> 
+    <select  class="form-control" [(ngModel)]="artisan">
+     <option  *ngFor="let a of ListeArtisan" value="{{a.idUtilisateur}}"  ng-repeat="whitelabel in whitelabels track by whitelabel.WhiteLabel.id">
+      {{a.utilisateur.nom}}  
+      </option>
+    </select>
+</div> 
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+ <label class="control-label">DESIGNTION:</label> 
+ <input class="form-control" type="text" [(ngModel)] ="article.designation"/>
+</div>
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+  <label class="control-label">LIBELLET:</label> 
+  <input class="form-control" type="text" [(ngModel)] ="article.libellet"/>
+</div>
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+    <label class="control-label">PHOTO:</label> 
+    <!--input type="file" class="custom-file-input" id="validatedCustomFile" required>
+    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+    <input class="form-control" type="text" [(ngModel)] ="article.photo"--->
+    <input type="file"  placeholder="photo" (change)="onSelectFile($event)" >
+  </div>
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+ <label class="control-label">PRIX:</label> 
+ <input class="form-control" type="text" [(ngModel)] ="article.prix"/>
+</div>
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+ <label class="control-label">QUANTITE:</label> 
+ <input class="form-control" type="text" [(ngModel)] ="article.quantite"/>
+</div>
+
+<div class="form-group" style="width: 45% ; margin-left: 2%">
+ <label class="control-label">DATE:</label> 
+ <input class="form-control" type="Date" [(ngModel)] ="article.datepulication"/>
+</div>
+
+<button class="btn btn-primary" (click)="saveArticle()">Ajouter</button>
+</div>
+</div>
+</div> 
+</div>

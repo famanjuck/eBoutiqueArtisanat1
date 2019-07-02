@@ -1,0 +1,96 @@
+
+
+      
+<div class="container spacer" style="align-content:left" *ngIf="editer==1">
+  <div class="card">
+    <div>
+      <button class= "button btn-primary "  routerLink="/ajout" > Ajouter </button>
+    </div>
+
+    <p>  </p>
+    <div>
+        <label>Mot cle:</label> 
+        <form>
+            <input type="text" name="motcle"  [(ngModel)]="motcle">
+            <button class= "button btn-primary "  (click)="doSearch()" > Chercher </button>
+        </form>
+       
+    </div>
+    <p>  </p>
+      <div class="card-header bg-primary" >Liste des Oeuvre D'Art</div>
+      <div class="card-body">
+    <div class="table-responsive">  
+    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+  <table class= "table tables-striped">
+      <tr>
+       <th>ID</th><th>TypeArt</th><th>PRIX</th><th>Libellet</th><th>Photo</th><th>Quantite</th> <th>Publication</th> <th>Supprimer</th> <th>Editer</th>
+      </tr> 
+      <tr *ngFor="let art of ListeArticles"> 
+      <!-- <tr *ngFor="let art of ListeArticles?.content">  --> 
+        <td>{{art.idArticle}}</td> 
+        <td>{{art.designation}}</td> 
+        <td>{{art.prix}}</td> 
+        <td>{{art.libellet}}</td> 
+        <td><img [src]="art.photo" alt="" style="height: 40px; width: 50px;"></td>   
+        <td>{{art.quantite}}</td> 
+        <td>{{art.datepulication}}</td>
+        <!--<button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">Ajouter</button>-->
+        <!-- <a routerLink="/ajout">Ajouter</a> -->
+        <td><button (click)="DeleteArticle(art.idArticle)">Supprimer</button></td>
+        <td><button (click)="onEditArticle(art)"  class="clickable">Edite</button></td>    
+    </tr>
+  </table>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container spacer" *ngIf="editer==2" >
+  <div class="panel panel-primary">
+  <div class="panel-heading">Update Article</div>
+  <div class="panel-body">
+     
+<div class="form-group">
+  <label class="control-label">ID:</label> 
+  <input class="form-control" type="text" [(ngModel)] ="article.idArticle"/>
+</div>
+  
+<div class="form-group">
+ <label class="control-label">DESIGNTION:</label> 
+ <input class="form-control" type="text" [(ngModel)] ="article.designation"/>
+</div>
+<div class="form-group">
+  <label class="control-label">LIBELLET:</label> 
+  <input class="form-control" type="text" [(ngModel)] ="article.libellet"/>
+</div>
+<div class="form-group">
+  <label class="control-label">PHOTO:</label> 
+  <!--input type="file" class="custom-file-input" id="validatedCustomFile" required>
+  <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+  <input class="form-control" type="text" [(ngModel)] ="article.photo"--->
+  <input type="file"  placeholder="photo" (change)="onSelectFile($event)" >
+</div>
+<div class="form-group">
+ <label class="control-label">PRIX:</label> 
+ <input class="form-control" type="text" [(ngModel)] ="article.prix"/>
+</div>
+<div class="form-group">
+ <label class="control-label">QUANTITE:</label> 
+ <input class="form-control" type="text" [(ngModel)] ="article.quantite"/>
+</div>
+<div class="form-group">
+ <label class="control-label">DATE:</label> 
+ <input class="form-control" type="Date" [(ngModel)] ="article.datepulication"/>
+</div>
+<button class="btn btn-primary" (click)="UpdateArticle()">EnregistreModification</button>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+

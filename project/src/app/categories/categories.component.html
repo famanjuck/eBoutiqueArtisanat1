@@ -1,0 +1,52 @@
+<div class="new_arrivals_agile_w3ls_info"> 
+    <div class="container">
+            <h3 class="wthree_text_info">Nouveau <span>Arrivage</span></h3>		
+            <div id="horizontalTab">
+       <div class="resp-tabs-container">
+<!--/tab_one-->
+<div class="tab1">
+    <div class="col-md-3 product-men" *ngFor="let art of ListeArticles">
+        <div class="men-pro-item simpleCart_shelfItem" >
+            <div class="men-thumb-item">
+                <img [src]="art.photo" alt="" class="pro-image-front" style="height: 250px; width: 300px;">
+                <img [src]="art.photo" alt="" class="pro-image-back" style="height: 250px; width: 300px;">
+                    <div class="men-cart-pro">
+                        <div class="inner-men-cart-pro">
+                            <a (click)="OndetailleArticle(art.idArticle)" class="link-product-add-cart">Quick View</a>
+                        </div>
+                    </div>
+                    <span class="product-new-top">New</span>
+                    
+            </div>
+            <div class="item-info-product ">
+                <h4><a href="single.html">{{art.libellet}}</a></h4>
+                <div class="info-product-price">
+                    <span class="item_price">{{art.prix}}</span>
+                    
+                </div>
+                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                    <form action="#" method="post">
+                                        <fieldset>
+                                            <input type="hidden" name="cmd" value="_cart" />
+                                            <input type="hidden" name="add" value="1" />
+                                            <input type="hidden" name="business" value=" " />
+                                            <input type="hidden" name="item_name" value="Formal Blue Shirt" />
+                                            <input type="hidden" name="amount" value="30.99" />
+                                            <input type="hidden" name="discount_amount" value="1.00" />
+                                            <input type="hidden" name="currency_code" value="USD" />
+                                            <input type="hidden" name="return" value=" " />
+                                            <input type="hidden" name="cancel_return" value=" " />
+                                            <input type="submit" name="submit" value="Add to cart" class="button" />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                                    
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
